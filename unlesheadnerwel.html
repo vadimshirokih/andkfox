@@ -77,7 +77,24 @@
             obj.scene.scale.set(1.3, 1.3, 1.3);
             scene.add(obj.scene);
         });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (obj)
+                obj.scene.rotation.y += 0.01;
+
+            rendrer.render(scene, camera);
+        }
+        animate();
     </script>
+    <style>
+        #auge {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 999;
+        }
+    </style>
 </body>
 
 </html>
